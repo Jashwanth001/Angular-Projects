@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Angular</title>
+</head>
+<body ng-app = "app">
+	<div ng-controller = "Hello">
+		<h2>Hello {{helloTo.title}}!</h2>
+	</div>
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script>
+		angular.module("app", [])
+		.controller("Hello", function($scope) {
+			$scope.helloTo = {};
+			$scope.helloTo.title = "Jashwanth";
+		});
+	</script>	
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<div ng-app="myapp" ng-controller="hello">
+		Firstname:<input type="text" ng-model = "firstname"><br>
+		Lastname:<input type="lastname" ng-model = "lastname"><br>
+
+		FullName :{{firstname+" "+lastname}}
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("myapp",[]);
+		app.controller("hello",function($scope){
+			$scope.firstname = "Jashwanth";
+			$scope.lastname = "Kumar";
+		});
+	</script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<div ng-app="" ng-init="quantity=5;cost=3;fname='Jash';lname='wanth'">
+		<p>The cost is:{{quantity*cost}}</p>
+		<p>My Name:{{fname+""+lname}}</p>
+	</div>
+</body>
+</html>

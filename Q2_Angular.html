@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>23MCA0076</title>
+ <script src="jquery3.6.1.js"></script>
+</head>
+<body>
+ <h1>User List</h1>
+ <h2>23MCA0076</h2>
+ <input type="text" id="userName" placeholder="Enter a name">
+ <button id="addToBeginning">Prepend</button>
+ <button id="addToEnd">Append</button>
+ <ul id="userList"></ul>
+ <script>
+ $(document).ready(function () {
+ const userList = [];
+
+ $("#addToBeginning").click(function () {
+ const name = $("#userName").val();
+ if (name) {
+ userList.unshift(name);
+ updateList();
+ }
+ });
+
+ $("#addToEnd").click(function () {
+ const name = $("#userName").val();
+ if (name) {
+ userList.push(name);
+ updateList();
+ }
+ });
+
+ function updateList() {
+ $("#userList").empty();
+ userList.forEach(function (name) {
+ $("#userList").append("<li>" + name + "</li>");
+ });
+ }
+ });
+ </script>
+</body>
+</html>

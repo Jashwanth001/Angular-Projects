@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="shoppingApp">
+<head>
+<title>23MCA0076</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="ShoppingController">
+<h1>23MCA0076</h1>
+<h1>Shopping List</h1>
+<ul>
+<li ng-repeat="item in shoppingList">{{ item.name }} - {{ item.price |
+currency }}</li>
+</ul>
+<form ng-submit="addItem()">
+<input type="text" ng-model="newItemName" placeholder="Item Name">
+<input type="number" ng-model="newItemPrice" placeholder="Item Price">
+<button type="submit">Add Item</button>
+</form>
+</div>
+<script>
+angular.module('shoppingApp', [])
+.controller('ShoppingController', function($scope) {
+$scope.shoppingList = [
+{ name: 'BAT', price: 2000.00 },
+{ name: 'BALL', price: 35.00 },
+{ name: 'CAP', price: 100.00 },
+{ name: 'PAD', price: 1000.00 },
+{ name: 'STUMP', price: 300.00 }
+];
+$scope.addItem = function() {
+if ($scope.newItemName && $scope.newItemPrice) {
+$scope.shoppingList.push({ name: $scope.newItemName, price:
+parseFloat($scope.newItemPrice) });
+$scope.newItemName = '';
+$scope.newItemPrice = '';
+}
+};
+});
+</script>
+</body>
+</html>

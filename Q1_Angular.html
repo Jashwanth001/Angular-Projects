@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.main {
+max-width: 400px;
+margin: 0 auto;
+padding: 20px;
+background-color: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 5px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Form elements */
+label {
+display: block;
+margin-bottom: 10px;
+font-weight: bold;
+}
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 3px;
+font-size: 14px;
+}
+select {
+height: 36px;
+}
+button[type="submit"] {
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 3px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+}
+button[type="submit"]:hover {
+background-color: #0056b3;
+}
+/* Display area for collected details */
+#displayDetails {
+margin-top: 20px;
+font-size: 14px;
+}
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Details Form</title>
+<script src="jquery3.6.1.js"></script>
+</head>
+<body>
+	<h3>23MCA0070</h3>
+<form id="userForm">
+<label for="userId">ID:</label>
+<input type="text" id="userId" name="userId"><br><br>
+<label for="userName">Name:</label>
+<input type="text" id="userName" name="userName"><br><br>
+<label for="userGender">Gender:</label>
+<input type="text" id="userGender" name="userGender"><br><br>
+<label for="userSalary">Salary:</label>
+<input type="text" id="userSalary" name="userSalary"><br><br>
+<label for="userEmail">Email:</label>
+<input type="email" id="userEmail" name="userEmail"><br><br>
+<button type="button" id="submitBtn">Submit</button>
+</form>
+<div id="displayDetails"></div>
+<script>
+$(document).ready(function(){
+$("#submitBtn").click(function(){
+var id = $("#userId").val();
+var name = $("#userName").val();
+var gender = $("#userGender").val();
+var salary = $("#userSalary").val();
+var email = $("#userEmail").val();
+var userDetails = "ID: " + id + "<br>Name: " + name + "<br>Gender: " + gender +
+"<br>Salary: " + salary + "<br>Email: " + email;
+$("#displayDetails").html(userDetails);
+});
+});
+</script>
+</body>
+</html>

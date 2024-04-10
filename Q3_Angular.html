@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="colorApp" ng-controller="colorCtrl" style="background-color:
+{{selectedColor}}">
+<h2>23MCA0076</h2>
+<input type="text" ng-model="selectedColor" placeholder="Enter a color name">
+<script>
+var app = angular.module('colorApp', []);
+app.controller('colorCtrl', function($scope) {
+$scope.selectedColor = '';
+});
+</script>
+</body>
+</html>

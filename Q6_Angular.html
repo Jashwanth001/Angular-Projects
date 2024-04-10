@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+<title>23MCA0076</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body style="text-align: center;">
+<div ng-controller="StudentController">
+<h1>23MCA0076</h1>
+<h1>Student Record</h1>
+<label>Number of students:</label>
+<input type="number" ng-model="numStudents" ng-change="updateCount()">
+<div ng-show="numStudents > 0">
+<p>Total Students: {{ numStudents }}</p>
+<div ng-repeat="student in students">
+<h3>Student {{ $index + 1 }}</h3>
+<label>Name:</label>
+<input type="text" ng-model="student.name">
+<label>CGPA:</label>
+<input type="number" step="0.01" ng-model="student.cgpa">
+</div>
+</div>
+</div>
+<script>
+angular.module('studentApp', [])
+.controller('StudentController', function($scope) {
+$scope.numStudents = 3;
+$scope.students = [
+{ name: 'jashwanth', cgpa: 8.2 }
+];
+$scope.updateCount = function() {
+$scope.students = [];
+for (var i = 0; i < $scope.numStudents; i++) {
+$scope.students.push({ name: '', cgpa: 0 });
+}
+};
+});
+</script>
+</body>
+</html>
